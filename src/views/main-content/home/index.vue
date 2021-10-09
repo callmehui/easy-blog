@@ -3,7 +3,10 @@
     <div class="max-w-5xl m-auto">
       <div class="grid grid-cols-12 mt-4 mb-8">
         <!-- 文章列表 -->
-        <div class="bg-white rounded shadow-sm lg:col-span-9 md:col-span-12">
+        <div
+          class="pb-4 bg-white rounded shadow-sm lg:col-span-9 md:col-span-12"
+          v-infinite-scroll="onPageChange"
+        >
           <ArticleCard
             v-for="article in articleState.list"
             :key="article.id"
@@ -11,7 +14,12 @@
           />
         </div>
         <!-- 个人信息 -->
-        <div class="ml-5 bg-white rounded shadow-sm lg:col-span-3"></div>
+        <div class="right-0 col-span-3 ml-5 rounded shadow-sm">
+          <div class="fixed top">
+            <Author v-if="userState.userInfo" :userInfo="userState.userInfo" />
+            <Footer />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -21,10 +29,17 @@
 import { reactive, onMounted } from "vue";
 import { apis } from "@/api";
 import { http } from "@/common/js/http";
-import { IArticleState, IFetchArticleListResponse } from "./interface";
+import {
+  IArticleState,
+  IFetchArticleListResponse,
+  IUserInfo,
+} from "./interface";
 import ArticleCard from "./components/article-card/index.vue";
+import Author from "./components/author/index.vue";
+import Footer from "./components/footer/index.vue";
 
 const articleState = reactive<IArticleState>({
+  type: "全部",
   limit: 10,
   offset: 0,
   total: 0,
@@ -32,19 +47,57 @@ const articleState = reactive<IArticleState>({
   hasMore: false,
 });
 
+const userState = reactive<{
+  userInfo?: IUserInfo;
+}>({
+  userInfo: undefined,
+});
+
+/** 获取用户信息 */
+const fetchUserInfo = async () => {
+  const data = await http<IUserInfo>(
+    {
+      url: apis.fetchUserInfo,
+    },
+    "data"
+  );
+  userState.userInfo = data;
+};
+
 /** 获取文章列表 */
-const fetchArticleList = async (limit: number, offset: number) => {
+const fetchArticleList = async (
+  limit: number,
+  offset: number,
+  type: string
+) => {
   const { total, list } = await http<IFetchArticleListResponse>(
-    { method: "post", url: apis.fetchArtistList, data: { limit, offset } },
+    {
+      method: "post",
+      url: apis.fetchArtistList,
+      data: { limit, offset, type },
+    },
     "data"
   );
   articleState.total = total;
-  articleState.list = list;
+  articleState.list = articleState.list.concat(list);
   articleState.hasMore = limit + offset < total;
 };
 
+/** 下拉加载 */
+const onPageChange = () => {
+  if (articleState.hasMore) {
+    articleState.offset += articleState.limit;
+    fetchArticleList(
+      articleState.limit,
+      articleState.offset,
+      articleState.type
+    );
+  }
+};
+
 onMounted(() => {
-  fetchArticleList(articleState.limit, articleState.offset);
+  fetchUserInfo();
+  fetchArticleList(articleState.limit, articleState.offset, articleState.type);
 });
 </script>
 

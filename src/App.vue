@@ -1,7 +1,7 @@
 <template>
   <div id="app-content" class="flex flex-col">
     <Header />
-    <el-scrollbar class="h-[calc(100%-60px)] flex-1">
+    <el-scrollbar class="h-[calc(100%-60px)] flex-1 mt-[60px]">
       <router-view />
     </el-scrollbar>
   </div>
