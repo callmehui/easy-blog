@@ -15,6 +15,8 @@ export function formatTime(
   timestamp: number | string = 1585734546,
   pattern = "yyyy-MM-dd hh:mm:ss"
 ): string {
+  console.log(timestamp);
+
   let dateObj;
   if (typeof timestamp === "number") {
     dateObj = new Date(timestamp);

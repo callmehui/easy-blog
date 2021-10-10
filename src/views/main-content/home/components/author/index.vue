@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-white rounded-b-lg">
+  <div class="bg-white rounded-b-lg" v-if="userState.userInfo">
     <div
       class="w-full h-20 bg-center bg-no-repeat bg-cover rounded-t-lg"
-      :style="{ backgroundImage: `url(${userInfo.bgImg})` }"
+      :style="{ backgroundImage: `url(${userState.userInfo.bgImg})` }"
     ></div>
     <div
       class="flex items-center relative left-6 top-[-20px] cursor-pointer"
@@ -10,30 +10,30 @@
     >
       <img
         class="w-16 h-16 rounded-[32px] border-2 border-white shadow-md"
-        :src="userInfo.portrait"
+        :src="userState.userInfo.portrait"
         alt="头像"
       />
       <span class="ml-2 text-lg font-medium text-gray-700 relative top-[8px]">{{
-        userInfo.username
+        userState.userInfo.username
       }}</span>
     </div>
     <!-- 文章统计 -->
     <div class="flex mx-8 mt-2">
       <div class="flex-1 text-center">
         <p class="mb-2 text-[15px] font-medium text-blue-500">
-          {{ userInfo.articleCount }}
+          {{ userState.userInfo.articleCount }}
         </p>
         <p class="mb-2 text-[15px] font-medium text-gray-500">文章</p>
       </div>
       <!-- <div class="flex-1 text-center">
         <p class="mb-2 text-[15px] font-medium text-blue-500">
-          {{ userInfo.novelCount }}
+          {{ userState.userInfo.novelCount }}
         </p>
         <p class="mb-2 text-[15px] font-medium text-gray-500">小说</p>
       </div>
       <div class="flex-1 text-center">
         <p class="mb-2 text-[15px] font-medium text-blue-500">
-          {{ userInfo.talkCount }}
+          {{ userState.userInfo.talkCount }}
         </p>
         <p class="mb-2 text-[15px] font-medium text-gray-500">说说</p>
       </div> -->
@@ -44,7 +44,7 @@
       <el-tooltip
         class="item"
         effect="dark"
-        :content="userInfo.githubUrl"
+        :content="userState.userInfo.githubUrl"
         placement="top"
       >
         <div class="flex justify-center flex-1">
@@ -56,7 +56,7 @@
       <el-tooltip
         class="item"
         effect="dark"
-        :content="userInfo.weChatAccount"
+        :content="userState.userInfo.weChatAccount"
         placement="top"
       >
         <div class="flex justify-center flex-1">
@@ -68,7 +68,7 @@
       <el-tooltip
         class="item"
         effect="dark"
-        :content="userInfo.qqAccount"
+        :content="userState.userInfo.qqAccount"
         placement="top"
       >
         <div class="flex justify-center flex-1">
@@ -82,10 +82,32 @@
 </template>
 
 <script lang="ts" setup>
+import { reactive, onMounted } from "vue";
+import { apis } from "@/api";
+import { http } from "@/common/js/http";
 import { gotoAboutPage } from "@/common/js/router";
 import { IUserInfo } from "../../interface";
 
-defineProps<{ userInfo: IUserInfo }>();
+const userState = reactive<{
+  userInfo?: IUserInfo;
+}>({
+  userInfo: undefined,
+});
+
+/** 获取用户信息 */
+const fetchUserInfo = async () => {
+  const data = await http<IUserInfo>(
+    {
+      url: apis.fetchUserInfo,
+    },
+    "data"
+  );
+  userState.userInfo = data;
+};
+
+onMounted(() => {
+  fetchUserInfo();
+});
 </script>
 
 <style lang="scss" scoped></style>

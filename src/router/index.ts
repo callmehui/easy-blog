@@ -38,6 +38,12 @@ const routes: Array<RouteRecordRaw> = [
     name: "Resume",
     component: lazyLoad("resume"),
   },
+  {
+    // 文章详情
+    path: "/article-detail/:id",
+    name: "Article",
+    component: lazyLoad("article-detail"),
+  },
 ];
 
 const router = createRouter({

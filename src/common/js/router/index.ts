@@ -19,3 +19,8 @@ export const gotoAboutPage = () => {
 export const gotoResumePage = () => {
   router.push(`/resume`);
 };
+
+/** 跳转到文章详情页面 */
+export const gotoArticleDetailPage = (id: string | number) => {
+  router.push(`/article-detail/${id}`);
+};

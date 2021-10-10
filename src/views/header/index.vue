@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-[60px] bg-white shadow-md fixed z-[2000]">
+  <div class="w-full h-[60px] bg-white shadow fixed z-[2000]">
     <div class="flex items-center h-full max-w-6xl m-auto">
       <!-- logo -->
       <router-link class="flex items-center mr-5" to="/">

@@ -9,9 +9,12 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@types/marked": "^3.0.1",
     "axios": "^0.22.0",
     "element-plus": "^1.1.0-beta.19",
+    "highlight.js": "^11.2.0",
     "lodash": "^4.17.21",
+    "marked": "^3.0.7",
     "vue": "^3.2.14",
     "vue-router": "^4.0.11",
     "vuex": "^4.0.2",

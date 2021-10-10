@@ -16,7 +16,7 @@
         <!-- 个人信息 -->
         <div class="right-0 col-span-3 ml-5 rounded shadow-sm">
           <div class="fixed top">
-            <Author v-if="userState.userInfo" :userInfo="userState.userInfo" />
+            <Author />
             <Footer />
           </div>
         </div>
@@ -29,11 +29,7 @@
 import { reactive, onMounted } from "vue";
 import { apis } from "@/api";
 import { http } from "@/common/js/http";
-import {
-  IArticleState,
-  IFetchArticleListResponse,
-  IUserInfo,
-} from "./interface";
+import { IArticleState, IFetchArticleListResponse } from "./interface";
 import ArticleCard from "./components/article-card/index.vue";
 import Author from "./components/author/index.vue";
 import Footer from "./components/footer/index.vue";
@@ -46,23 +42,6 @@ const articleState = reactive<IArticleState>({
   list: [],
   hasMore: false,
 });
-
-const userState = reactive<{
-  userInfo?: IUserInfo;
-}>({
-  userInfo: undefined,
-});
-
-/** 获取用户信息 */
-const fetchUserInfo = async () => {
-  const data = await http<IUserInfo>(
-    {
-      url: apis.fetchUserInfo,
-    },
-    "data"
-  );
-  userState.userInfo = data;
-};
 
 /** 获取文章列表 */
 const fetchArticleList = async (
@@ -96,7 +75,6 @@ const onPageChange = () => {
 };
 
 onMounted(() => {
-  fetchUserInfo();
   fetchArticleList(articleState.limit, articleState.offset, articleState.type);
 });
 </script>

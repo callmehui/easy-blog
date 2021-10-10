@@ -5,6 +5,30 @@
 
 @layer components {
   .text-ellipsis {
-    @apply overflow-hidden whitespace-nowrap overflow-ellipsis break-all;
+    @apply overflow-hidden break-all whitespace-nowrap overflow-ellipsis;
+  }
+
+  .text-ellipsis-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  .text-ellipsis-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+
+  .btn {
+    @apply inline-block px-3 py-2 text-xs font-semibold tracking-wider uppercase transition transform rounded-md cursor-pointer focus:outline-none focus:ring focus:ring-offset-2 focus:ring-opacity-50 sm:text-sm;
+  }
+
+  .btn-primary {
+    @apply text-white bg-blue-500 hover:bg-blue-400 focus:ring-blue-500 active:bg-blue-600;
+  }
+  .btn-secondary {
+    @apply text-gray-800 bg-gray-300 hover:bg-gray-200 focus:ring-gray-300;
   }
 }

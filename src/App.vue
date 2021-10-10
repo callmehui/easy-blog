@@ -1,7 +1,7 @@
 <template>
   <div id="app-content" class="flex flex-col">
     <Header />
-    <el-scrollbar class="h-[calc(100%-60px)] flex-1 mt-[60px]">
+    <el-scrollbar class="h-[calc(100vh-60px)] flex-1 mt-[60px]">
       <router-view />
     </el-scrollbar>
   </div>
@@ -17,6 +17,7 @@ import Header from "./views/header/index.vue";
     "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 
   :deep(.el-scrollbar__view) {
     display: flex;
