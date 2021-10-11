@@ -11,7 +11,13 @@
         <div class="px-8 py-6 pb-4 lg:col-span-7 md:col-span-12">
           <!-- 个人信息 -->
           <h2
-            class="pb-1 text-2xl font-bold text-gray-700 border-b border-gray-200 "
+            class="
+              pb-1
+              text-2xl
+              font-bold
+              text-gray-700
+              border-b border-gray-200
+            "
           >
             个人信息
           </h2>
@@ -31,12 +37,19 @@
           </ul>
           <!-- 教育经历 -->
           <h2
-            class="pb-1 mb-4 text-2xl font-bold text-gray-700 border-b border-gray-200 "
+            class="
+              pb-1
+              mb-4
+              text-2xl
+              font-bold
+              text-gray-700
+              border-b border-gray-200
+            "
           >
             教育
           </h2>
           <h3 class="mt-5 mb-2 text-lg font-medium text-red-500">
-            <a href="http://www.hubu.edu.cn/" target="__blank">湖北大学</a>
+            <a href="http://www.hubu.edu.cn/" target="_blank">湖北大学</a>
           </h3>
           <ul>
             <li class="text-base text-gray-600">
@@ -46,7 +59,14 @@
           </ul>
           <!-- 专业技能 -->
           <h2
-            class="pb-1 mb-4 text-2xl font-bold text-gray-700 border-b border-gray-200 "
+            class="
+              pb-1
+              mb-4
+              text-2xl
+              font-bold
+              text-gray-700
+              border-b border-gray-200
+            "
           >
             专业技能
           </h2>
@@ -88,7 +108,14 @@
           </ol>
           <!-- 项目（工作） -->
           <h2
-            class="pb-1 mb-4 text-2xl font-bold text-gray-700 border-b border-gray-200 "
+            class="
+              pb-1
+              mb-4
+              text-2xl
+              font-bold
+              text-gray-700
+              border-b border-gray-200
+            "
           >
             项目（工作）
           </h2>
@@ -178,12 +205,19 @@
           </ul>
           <!-- 项目（开源） -->
           <h2
-            class="pb-1 mb-4 text-2xl font-bold text-gray-700 border-b border-gray-200 "
+            class="
+              pb-1
+              mb-4
+              text-2xl
+              font-bold
+              text-gray-700
+              border-b border-gray-200
+            "
           >
             项目（开源）
           </h2>
           <h3 class="mt-5 mb-2 text-lg font-medium text-red-500">
-            <a href="https://music-player.immortalboy.cn/" target="__blank"
+            <a href="https://music-player.immortalboy.cn/" target="_blank"
               >仿网易云音乐播放器</a
             >
             <span class="ml-2 text-sm font-normal text-gray-400"
@@ -200,7 +234,14 @@
           </ul>
           <!-- 工作 -->
           <h2
-            class="pb-1 mb-4 text-2xl font-bold text-gray-700 border-b border-gray-200 "
+            class="
+              pb-1
+              mb-4
+              text-2xl
+              font-bold
+              text-gray-700
+              border-b border-gray-200
+            "
           >
             工作
           </h2>
@@ -253,12 +294,19 @@
           </ul>
           <!-- 我建的网站 -->
           <h2
-            class="pb-1 mb-4 text-2xl font-bold text-gray-700 border-b border-gray-200 "
+            class="
+              pb-1
+              mb-4
+              text-2xl
+              font-bold
+              text-gray-700
+              border-b border-gray-200
+            "
           >
             我建的网站
           </h2>
           <h3 class="mt-5 mb-2 text-lg font-medium text-red-500">
-            <a href="https://music-player.immortalboy.cn/" target="__blank"
+            <a href="https://music-player.immortalboy.cn/" target="_blank"
               >仿网易云音乐播放器</a
             >
             <span class="ml-2 text-sm font-normal text-gray-400">-</span>
@@ -272,7 +320,7 @@
             </li>
           </ul>
           <h3 class="mt-5 mb-2 text-lg font-medium text-red-500">
-            <a href="https://immortalboy.cn/" target="__blank">个人博客</a>
+            <a href="https://immortalboy.cn/" target="_blank">个人博客</a>
             <span class="ml-2 text-sm font-normal text-gray-400">-</span>
             <span class="ml-2 text-sm font-normal text-gray-400"
               >[2021-10 - 至今]</span
@@ -288,7 +336,14 @@
         <div class="col-span-5 py-6 ml-5 mr-8">
           <!-- 联系方式 -->
           <h2
-            class="pb-1 mb-4 text-2xl font-bold text-gray-700 border-b border-gray-200 "
+            class="
+              pb-1
+              mb-4
+              text-2xl
+              font-bold
+              text-gray-700
+              border-b border-gray-200
+            "
           >
             联系方式
           </h2>
@@ -312,7 +367,7 @@
               <a
                 class="text-ellipsis"
                 href="https://immortalboy.cn"
-                target="__blank"
+                target="_blank"
                 >https://immortalboy.cn</a
               >
             </li>
@@ -321,13 +376,13 @@
               <a
                 class="text-ellipsis"
                 href="https://github.com/callmehui"
-                target="__blank"
+                target="_blank"
                 >Github</a
               >、
               <a
                 class="flex-1 text-ellipsis"
                 href="https://juejin.cn/user/4212984287339021"
-                target="__blank"
+                target="_blank"
                 >稀土掘金</a
               >
             </li>

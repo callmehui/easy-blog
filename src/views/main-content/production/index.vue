@@ -19,14 +19,14 @@
               <a
                 class="block mb-2 text-lg font-bold text-gray-700"
                 :href="product.previewUrl"
-                target="__blank"
+                target="_blank"
               >
                 {{ product.name }}
               </a>
               <a
                 class="block mb-2 text-sm text-gray-500 text-ellipsis-3"
                 :href="product.previewUrl"
-                target="__blank"
+                target="_blank"
               >
                 {{ product.summary }}
               </a>
@@ -38,14 +38,14 @@
                 <a
                   class="mr-4 btn btn-primary"
                   :href="product.previewUrl"
-                  target="__blank"
+                  target="_blank"
                   >在线预览</a
                 >
                 <a
                   v-if="product.githubUrl"
                   class="btn btn-secondary"
                   :href="product.githubUrl"
-                  target="__blank"
+                  target="_blank"
                   >github</a
                 >
               </div>
