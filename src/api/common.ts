@@ -1,14 +1,8 @@
 const serverUrl =
-  import.meta.env.MODE === "production"
-    ? "https://music-player-server.immortalboy.cn"
-    : "";
+  import.meta.env.MODE === "production" ? "https://immortalboy.cn" : "";
 const imgServerUrl =
-  import.meta.env.MODE === "production"
-    ? "https://music-player-server.immortalboy.cn"
-    : "";
+  import.meta.env.MODE === "production" ? "https://immortalboy.cn" : "";
 const baseUrl =
-  import.meta.env.MODE === "production"
-    ? "https://music-player-server.immortalboy.cn"
-    : "/api";
+  import.meta.env.MODE === "production" ? "https://immortalboy.cn" : "/api";
 
 export { baseUrl, serverUrl, imgServerUrl };
