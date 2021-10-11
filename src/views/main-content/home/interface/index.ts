@@ -34,4 +34,5 @@ export interface IUserInfo {
   talkCount: number /** 说说数 */;
   username: string /** 用户名 */;
   weChatAccount: string /** 微信号 */;
+  viewCount: number /** 访问量 */;
 }

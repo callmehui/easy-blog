@@ -14,8 +14,8 @@
           />
         </div>
         <!-- 个人信息 -->
-        <div class="right-0 col-span-3 ml-5 rounded shadow-sm">
-          <div class="fixed top">
+        <div class="right-0 col-span-3 ml-5 rounded">
+          <div class="fixed w-[236px]">
             <Author />
             <Footer />
           </div>
@@ -74,7 +74,13 @@ const onPageChange = () => {
   }
 };
 
+/** 自增用户访问量 */
+const addUserViewCountById = async () => {
+  await http({ url: apis.addUserViewCountById });
+};
+
 onMounted(() => {
+  addUserViewCountById();
   fetchArticleList(articleState.limit, articleState.offset, articleState.type);
 });
 </script>

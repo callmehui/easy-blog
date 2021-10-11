@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white rounded-b-lg" v-if="userState.userInfo">
+  <div class="bg-white rounded-b-lg shadow-sm" v-if="userState.userInfo">
     <div
       class="w-full h-20 bg-center bg-no-repeat bg-cover rounded-t-lg"
       :style="{ backgroundImage: `url(${userState.userInfo.bgImg})` }"
@@ -78,6 +78,14 @@
         </div>
       </el-tooltip>
     </div>
+    <!-- 访问量 -->
+    <div class="px-4 pb-4 border-t border-gray-200">
+      <span
+        class="inline-block px-2 py-1 mt-3 mr-1 text-xs text-blue-400 bg-blue-100 border border-blue-200 rounded-md "
+      >
+        被访问{{ formatNumberToText(userState.userInfo.viewCount) }}次
+      </span>
+    </div>
   </div>
 </template>
 
@@ -85,6 +93,7 @@
 import { reactive, onMounted } from "vue";
 import { apis } from "@/api";
 import { http } from "@/common/js/http";
+import { formatNumberToText } from "@/common/js/util";
 import { gotoAboutPage } from "@/common/js/router";
 import { IUserInfo } from "../../interface";
 

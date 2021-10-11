@@ -7,7 +7,7 @@ import store from "./store";
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 import "highlight.js/styles/monokai-sublime.css";
-import "@/common/css/tailwind.css";
+import "./common/css/tailwind.css";
 
 const app = createApp(App);
 

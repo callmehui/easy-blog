@@ -14,8 +14,8 @@
         <!-- 文章内容导航 -->
         <!-- <div class="right-0 col-span-3 ml-5 rounded shadow-sm"></div> -->
         <!-- 个人信息 -->
-        <div class="right-0 col-span-3 ml-5 rounded shadow-sm">
-          <div class="fixed top">
+        <div class="right-0 col-span-3 ml-5 rounded">
+          <div class="fixed w-[236px]">
             <Author />
             <Footer />
           </div>
@@ -60,7 +60,13 @@ const addArticleViewCount = async (id: string) => {
   });
 };
 
+/** 自增用户访问量 */
+const addUserViewCountById = async () => {
+  await http({ url: apis.addUserViewCountById });
+};
+
 onMounted(() => {
+  addUserViewCountById();
   if (route.params.id) {
     addArticleViewCount(route.params.id as string);
     fetchArticleDetail(route.params.id as string);

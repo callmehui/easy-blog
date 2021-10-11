@@ -56,8 +56,8 @@
           </div>
         </div>
         <!-- 个人信息 -->
-        <div class="right-0 col-span-3 ml-5 rounded shadow-sm">
-          <div class="fixed top">
+        <div class="right-0 col-span-3 ml-5 rounded">
+          <div class="fixed w-[236px]">
             <Author />
             <Footer />
           </div>

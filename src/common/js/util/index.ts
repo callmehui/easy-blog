@@ -101,15 +101,6 @@ export const transformSecondToMinute = (secondCount: number): string => {
   return "00:00";
 };
 
-/** 转换播放量数量为显示值 */
-export const translatePlayCount = (count: number): string | number => {
-  if (count > 100000) {
-    return Math.ceil(count / 10000) + "万";
-  } else {
-    return count;
-  }
-};
-
 /**
  * 格式化月份
  * @param month 月份
@@ -197,4 +188,19 @@ export const formatDateToText = (
     timeString = "缺少时间参数";
   }
   return timeString;
+};
+
+/**
+ * 格式化数字为
+ * @param num
+ */
+export const formatNumberToText = (num: number | string): string | number => {
+  if (isNaN(Number(num))) {
+    return num;
+  }
+
+  if (Number(num) > 10000) {
+    return Math.ceil(Number(num) / 10000) + "万";
+  }
+  return Number(num);
 };

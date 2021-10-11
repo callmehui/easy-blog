@@ -23,6 +23,7 @@
   "devDependencies": {
     "@tailwindcss/postcss7-compat": "^2.2.16",
     "@types/lodash": "^4.14.175",
+    "@types/node": "^16.10.3",
     "@vitejs/plugin-vue": "^1.9.3",
     "autoprefixer": "^9",
     "postcss": "^7",
