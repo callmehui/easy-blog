@@ -3,6 +3,6 @@ const serverUrl =
 const imgServerUrl =
   import.meta.env.MODE === "production" ? "https://immortalboy.cn" : "";
 const baseUrl =
-  import.meta.env.MODE === "production" ? "https://immortalboy.cn" : "/api";
+  import.meta.env.MODE === "production" ? "https://immortalboy.cn/api" : "/api";
 
 export { baseUrl, serverUrl, imgServerUrl };
