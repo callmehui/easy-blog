@@ -2,9 +2,9 @@
   <div class="w-full bg-gray-100">
     <div class="relative max-w-5xl m-auto mt-8 mb-10 border rounded shadow-sm">
       <!-- 下载简历 -->
-      <!-- <div class="absolute top-4 right-8 btn btn-danger" @click="downResume">
+      <div class="absolute top-4 right-8 btn btn-danger" @click="downResume">
         下载pdf简历
-      </div> -->
+      </div>
 
       <div id="resume" class="grid grid-cols-12 pt-4 pb-8 bg-white">
         <!-- 简历左侧 -->
@@ -339,8 +339,15 @@
 </template>
 
 <script lang="ts" setup>
+import resume from "@/assets/pdf/resume.pdf";
+
 /** 下载简历 */
-const downResume = () => {};
+const downResume = () => {
+  const link = document.createElement("a");
+  link.download = "个人简历-钟辉.pdf";
+  link.href = resume;
+  link.click();
+};
 </script>
 
 <style lang="scss" scoped>
