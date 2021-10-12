@@ -1,23 +1,17 @@
 <template>
-  <div class="w-full bg-white">
+  <div class="w-full bg-gray-100">
     <div class="relative max-w-5xl m-auto mt-8 mb-10 border rounded shadow-sm">
       <!-- 下载简历 -->
       <!-- <div class="absolute top-4 right-8 btn btn-danger" @click="downResume">
         下载pdf简历
       </div> -->
 
-      <div id="resume" class="grid grid-cols-12 mt-4 mb-8">
+      <div id="resume" class="grid grid-cols-12 pt-4 pb-8 bg-white">
         <!-- 简历左侧 -->
         <div class="px-8 py-6 pb-4 lg:col-span-7 md:col-span-12">
           <!-- 个人信息 -->
           <h2
-            class="
-              pb-1
-              text-2xl
-              font-bold
-              text-gray-700
-              border-b border-gray-200
-            "
+            class="pb-1 text-2xl font-bold text-gray-700 border-b border-gray-200 "
           >
             个人信息
           </h2>
@@ -37,14 +31,7 @@
           </ul>
           <!-- 教育经历 -->
           <h2
-            class="
-              pb-1
-              mb-4
-              text-2xl
-              font-bold
-              text-gray-700
-              border-b border-gray-200
-            "
+            class="pb-1 mb-4 text-2xl font-bold text-gray-700 border-b border-gray-200 "
           >
             教育
           </h2>
@@ -59,14 +46,7 @@
           </ul>
           <!-- 专业技能 -->
           <h2
-            class="
-              pb-1
-              mb-4
-              text-2xl
-              font-bold
-              text-gray-700
-              border-b border-gray-200
-            "
+            class="pb-1 mb-4 text-2xl font-bold text-gray-700 border-b border-gray-200 "
           >
             专业技能
           </h2>
@@ -108,14 +88,7 @@
           </ol>
           <!-- 项目（工作） -->
           <h2
-            class="
-              pb-1
-              mb-4
-              text-2xl
-              font-bold
-              text-gray-700
-              border-b border-gray-200
-            "
+            class="pb-1 mb-4 text-2xl font-bold text-gray-700 border-b border-gray-200 "
           >
             项目（工作）
           </h2>
@@ -205,14 +178,7 @@
           </ul>
           <!-- 项目（开源） -->
           <h2
-            class="
-              pb-1
-              mb-4
-              text-2xl
-              font-bold
-              text-gray-700
-              border-b border-gray-200
-            "
+            class="pb-1 mb-4 text-2xl font-bold text-gray-700 border-b border-gray-200 "
           >
             项目（开源）
           </h2>
@@ -234,14 +200,7 @@
           </ul>
           <!-- 工作 -->
           <h2
-            class="
-              pb-1
-              mb-4
-              text-2xl
-              font-bold
-              text-gray-700
-              border-b border-gray-200
-            "
+            class="pb-1 mb-4 text-2xl font-bold text-gray-700 border-b border-gray-200 "
           >
             工作
           </h2>
@@ -294,14 +253,7 @@
           </ul>
           <!-- 我建的网站 -->
           <h2
-            class="
-              pb-1
-              mb-4
-              text-2xl
-              font-bold
-              text-gray-700
-              border-b border-gray-200
-            "
+            class="pb-1 mb-4 text-2xl font-bold text-gray-700 border-b border-gray-200 "
           >
             我建的网站
           </h2>
@@ -336,14 +288,7 @@
         <div class="col-span-5 py-6 ml-5 mr-8">
           <!-- 联系方式 -->
           <h2
-            class="
-              pb-1
-              mb-4
-              text-2xl
-              font-bold
-              text-gray-700
-              border-b border-gray-200
-            "
+            class="pb-1 mb-4 text-2xl font-bold text-gray-700 border-b border-gray-200 "
           >
             联系方式
           </h2>
