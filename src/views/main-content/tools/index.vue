@@ -67,7 +67,7 @@ const tools = [
     summary:
       "用于生成文章的配图，基本模板目前只有一个，可以切换封面的配图和文字。",
     coverUrl:
-      "https://image.immortalboy.cn/public/uploads/2021/10/10/1633864480549826.png",
+      "https://immortalboy.cn/public/uploads/2021/10/15/163430004443281.jpg",
     previewUrl: "/cover-designer",
     remark: "目前只有一个模板，有好的UI会再增加模板",
   },
