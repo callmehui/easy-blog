@@ -38,6 +38,7 @@ const state = reactive({
     { text: "作品集", url: "/production", active: false },
     { text: "关于我", url: "/about", active: false },
     { text: "简历", url: "/resume", active: false },
+    { text: "工具", url: "/tools", active: false },
   ],
 });
 

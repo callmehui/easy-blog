@@ -44,6 +44,21 @@ const routes: Array<RouteRecordRaw> = [
     name: "Article",
     component: lazyLoad("article-detail"),
   },
+  {
+    // 工具
+    path: "/tools",
+    name: "Tools",
+    component: lazyLoad("tools"),
+    children: [
+      
+    ]
+  },
+  {
+    // 封面生成器
+    path: "/cover-designer",
+    name: "CoverDesigner",
+    component: lazyLoad("tools/views/cover-designer"),
+  },
 ];
 
 const router = createRouter({

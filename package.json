@@ -25,6 +25,7 @@
     "@types/node": "^16.10.3",
     "@vitejs/plugin-vue": "^1.9.3",
     "autoprefixer": "^9",
+    "html-to-image": "^1.9.0",
     "postcss": "^7",
     "sass": "^1.42.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
