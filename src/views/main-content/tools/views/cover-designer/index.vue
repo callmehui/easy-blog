@@ -19,7 +19,7 @@
               <el-input v-model="form.image1" placeholder="输入封面配图1" />
             </el-form-item>
             <el-form-item class="relative" label="封面配图2：">
-              <el-upload class="absolute top-[-36px] left-20 font-semibold text-blue-500" :action="apis.imageUpload" list-type="text" :on-success="handleImage1Success">
+              <el-upload class="absolute top-[-36px] left-20 font-semibold text-blue-500" :action="apis.imageUpload" list-type="text" :on-success="handleImage2Success">
                   <div>（点击上传配图）</div>
               </el-upload>
               <el-input v-model="form.image2" placeholder="输入封面配图2" />

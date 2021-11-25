@@ -141,5 +141,33 @@ const articleContent = computed(() => marked(content.content));
     color: #0269c8;
     border-bottom: 1px solid #d1e9ff;
   }
+  & :deep() blockquote {
+    color: #666;
+    padding: 1px 23px;
+    margin: 22px 0;
+    border-left: 4px solid #cbcbcb;
+    background-color: #f8f8f8;
+  }
+  & :deep() table {
+    display: inline-block!important;
+    font-size: 12px;
+    width: auto;
+    max-width: 100%;
+    overflow: auto;
+    border: 1px solid #f6f6f6;
+  }
+  & :deep() thead {
+    background: #f6f6f6;
+    color: #000;
+    text-align: left;
+  }
+  & :deep() td, 
+  & :deep() th {
+    padding: 12px 7px;
+    line-height: 24px;
+  }
+  & :deep() td {
+    min-width: 120px;
+  }
 }
 </style>
