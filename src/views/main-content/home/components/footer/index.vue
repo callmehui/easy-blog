@@ -7,7 +7,7 @@
       <img class="mr-1" src="@/assets/image/gov.png" alt="政府图标" />
       <a
         class="link"
-        href="http://beian.gov.cn/portal/registerSystemInfo?recordcode=44030402003243"
+        href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030402003243"
         target="_blank"
       >
         粤公网安备 44030402003243号
