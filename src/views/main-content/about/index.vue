@@ -3,16 +3,25 @@
     <div class="max-w-5xl m-auto">
       <div class="grid grid-cols-12 mt-4 mb-8">
         <div
-          class="px-5 py-6 pb-4 bg-white rounded shadow-sm  lg:col-span-9 md:col-span-12"
+          class="
+            px-5
+            py-6
+            pb-4
+            bg-white
+            rounded
+            shadow-sm
+            lg:col-span-9
+            md:col-span-12
+          "
         >
           <div class="about-content">
             <h2 class="pb-2 text-2xl font-semibold border-b border-gray-100">
-              <span>👋 大家好，我是马克豚!</span>
+              <span>👋 大家好，我是爱编程的Mark!</span>
               <span>✨</span>
             </h2>
 
             <p>
-              我是<strong>马克豚</strong>，本名<strong>钟辉</strong>，一位前端工程师、开源作者。
+              我是<strong>爱编程的Mark</strong>，本名<strong>钟辉</strong>，一位前端工程师、开源作者。
             </p>
 
             <p>

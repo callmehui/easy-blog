@@ -10,7 +10,14 @@
       <nav>
         <ul class="flex items-center h-full">
           <router-link
-            class="px-5 text-base font-medium text-gray-400 cursor-pointer  hover:text-blue-500"
+            class="
+              px-5
+              text-base
+              font-medium
+              text-gray-400
+              cursor-pointer
+              hover:text-blue-500
+            "
             :class="{ 'text-blue-500': nav.active }"
             v-for="nav in state.navs"
             :key="nav.text"
@@ -32,7 +39,7 @@ import { useRoute } from "vue-router";
 const route = useRoute();
 
 const state = reactive({
-  logoName: "Marktwain",
+  logoName: "爱编程的Mark",
   navs: [
     { text: "首页", url: "/", active: true },
     { text: "作品集", url: "/production", active: false },

@@ -103,8 +103,8 @@ const handleImageSuccess = (response: IImageUploadResponse, type = 'image1') => 
 /** 加载示例数据 */
 const loadExampleData = () => {
   const exampleData: ICoverDesigner = {
-    title: '每天一篇短文章，每天进步一点点', /** 封面标题 */
-    subTitle: '手写前端面试题', /** 封面小标题 */
+    title: '手写前端面试题', /** 封面标题 */
+    subTitle: '每天一篇短文章，每天进步一点点', /** 封面小标题 */
     image1: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwx3.sinaimg.cn%2Fmw690%2F5f808b33ly1gtiphdw1qmj210z117jx2.jpg&refer=http%3A%2F%2Fwx3.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1635558644&t=7e78332ae1fd1fabdc7c055225e74f27', /** 封面配图1 */
     image2: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201604%2F09%2F20160409012110_XEfFy.jpeg&refer=http%3A%2F%2Fb-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1635563063&t=a59acdafb19a06f13d9ecb5607255858', /** 封面配图2 */
     template: '模板1', /** 封面模板 */
