@@ -4,7 +4,7 @@
       <div class="grid grid-cols-12 mt-4 mb-8">
         <div class="lg:col-span-9 md:col-span-12">
           <div
-            class="flex px-4 py-3 mb-5 bg-white border border-gray-200 rounded shadow "
+            class="flex px-4 py-3 mb-5 bg-white border border-gray-200 rounded shadow"
             v-for="tool in tools"
             :key="tool.name"
           >
@@ -35,7 +35,9 @@
                 <span class="text-sm text-blue-600">{{ tool.type }}</span>
               </div>
               <div class="pb-2">
-                <router-link class="mr-4 btn btn-primary" :to="tool.previewUrl">打开使用</router-link>
+                <router-link class="mr-4 btn btn-primary" :to="tool.previewUrl"
+                  >打开使用</router-link
+                >
               </div>
               <div class="text-xs text-gray-400 text-ellipsis">
                 {{ tool.remark }}
@@ -64,10 +66,8 @@ const tools = [
   {
     name: "文章封面生成器",
     type: "可用",
-    summary:
-      "用于生成文章的配图，基本模板目前只有一个，可以切换封面的配图和文字。",
-    coverUrl:
-      "https://immortalboy.cn/public/uploads/2021/10/15/163430004443281.jpg",
+    summary: "用于生成文章的配图，基本模板目前只有一个，可以切换封面的配图和文字。",
+    coverUrl: "https://immortalboy.cn/public/uploads/2021/10/15/163430004443281.jpg",
     previewUrl: "/cover-designer",
     remark: "目前只有一个模板，有好的UI会再增加模板",
   },

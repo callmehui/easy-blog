@@ -1,6 +1,6 @@
 <template>
   <div class="px-2 mt-4 text-xs text-gray-500">
-    <a class="block mb-1" href="http://www.beian.miit.gov.cn/" target="_blank">
+    <a class="block mb-1" href="http://beian.miit.gov.cn/" target="_blank">
       粤ICP备 19089643 号
     </a>
     <div class="flex flex-wrap items-center">
