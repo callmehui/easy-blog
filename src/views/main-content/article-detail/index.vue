@@ -3,13 +3,15 @@
     <div class="max-w-5xl m-auto">
       <div class="grid grid-cols-12 mt-4 mb-8">
         <!-- 文章内容 -->
-        <div
-          class="pb-4 bg-white rounded shadow-sm lg:col-span-9 md:col-span-12"
-        >
-          <ArticleContent
-            v-if="articleState.content"
-            :content="articleState.content"
-          />
+        <div class="pb-4 rounded shadow-sm lg:col-span-9 md:col-span-12">
+          <div class="bg-white">
+            <ArticleContent
+              v-if="articleState.content"
+              :content="articleState.content"
+            />
+          </div>
+          <!-- 文章评论 -->
+          <Comment :id="24" />
         </div>
         <!-- 文章内容导航 -->
         <!-- <div class="right-0 col-span-3 ml-5 rounded shadow-sm"></div> -->
@@ -35,6 +37,7 @@ import { IArticleDetail, IArticleDetailState } from "./interface";
 import ArticleContent from "./components/article-content/index.vue";
 import Author from "../home/components/author/index.vue";
 import Footer from "../home/components/footer/index.vue";
+import Comment from "@/components/comment/index.vue";
 
 const route = useRoute();
 

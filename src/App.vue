@@ -4,11 +4,18 @@
     <el-scrollbar class="h-[calc(100vh-60px)] flex-1 mt-[60px]">
       <router-view />
     </el-scrollbar>
+    <!--  vue-query 开发者工具 -->
+    <VueQueryDevTools />
   </div>
 </template>
 
 <script lang="ts" setup>
+import { VueQueryDevTools } from "vue-query/devtools";
+import { QueryClient, useQueryProvider } from "vue-query";
 import Header from "./views/header/index.vue";
+
+/** 初始化queryClient缓存实例，后续页面可以通过useQueryClient()获取该缓存实例 */
+useQueryProvider(new QueryClient());
 </script>
 
 <style lang="scss" scoped>

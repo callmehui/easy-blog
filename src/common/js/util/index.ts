@@ -204,3 +204,33 @@ export const formatNumberToText = (num: number | string): string | number => {
   }
   return Number(num);
 };
+
+/**
+ * 获取当前的操作系统
+ * @returns {string}
+ */
+export const getCurrentOS = () => {
+  const ua = navigator.userAgent;
+  const isWindows = /windows/i.test(ua);
+  const isMac = /macintosh/i.test(ua);
+  const isLinux = /linux/i.test(ua);
+  const isAndroid = /android/i.test(ua);
+  const isIOS = /iphone|ipad|ipod/i.test(ua);
+  const isMobile = /mobile/i.test(ua);
+  const isTablet = /tablet/i.test(ua);
+  const isPhone = isMobile && !isTablet;
+  const isTouch = isIOS || isAndroid;
+  const isPC = !isMobile;
+  return {
+    isWindows,
+    isMac,
+    isLinux,
+    isAndroid,
+    isIOS,
+    isMobile,
+    isTablet,
+    isPhone,
+    isTouch,
+    isPC,
+  };
+};

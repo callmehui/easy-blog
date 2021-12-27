@@ -149,7 +149,7 @@ const articleContent = computed(() => marked(content.content));
     background-color: #f8f8f8;
   }
   & :deep() table {
-    display: inline-block!important;
+    display: inline-block !important;
     font-size: 12px;
     width: auto;
     max-width: 100%;
@@ -161,7 +161,7 @@ const articleContent = computed(() => marked(content.content));
     color: #000;
     text-align: left;
   }
-  & :deep() td, 
+  & :deep() td,
   & :deep() th {
     padding: 12px 7px;
     line-height: 24px;

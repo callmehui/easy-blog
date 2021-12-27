@@ -15,6 +15,7 @@
     "lodash": "^4.17.21",
     "marked": "^3.0.7",
     "vue": "^3.2.14",
+    "vue-query": "^1.15.0",
     "vue-router": "^4.0.11",
     "vuex": "^4.0.2",
     "vuex-persistedstate": "^4.1.0"
