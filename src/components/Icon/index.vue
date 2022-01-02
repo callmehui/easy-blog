@@ -1,9 +1,5 @@
 <template>
-  <i
-    :class="[icon, iconClass, 'mp-icon']"
-    :style="iconStyle"
-    @click="handleClick"
-  ></i>
+  <i :class="[icon, iconClass, 'mp-icon']" :style="iconStyle" @click="handleClick"></i>
 </template>
 
 <script lang="ts">
@@ -66,16 +62,9 @@ export default defineComponent({
   emits: ["click"],
   name: "BlogIcon",
   setup(props, { emit }) {
-    const {
-      icon,
-      iconPrefix,
-      iconSource,
-      color,
-      bgColor,
-      size,
-      cursor,
-      scale,
-    } = toRefs(props);
+    const { icon, iconPrefix, iconSource, color, bgColor, size, cursor, scale } = toRefs(
+      props
+    );
 
     /** 图标的class */
     const iconClass = computed(() => {

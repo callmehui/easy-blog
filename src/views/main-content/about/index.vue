@@ -3,16 +3,7 @@
     <div class="max-w-5xl m-auto">
       <div class="grid grid-cols-12 mt-4 mb-8">
         <div
-          class="
-            px-5
-            py-6
-            pb-4
-            bg-white
-            rounded
-            shadow-sm
-            lg:col-span-9
-            md:col-span-12
-          "
+          class="px-5 py-6 pb-4 bg-white rounded shadow-sm lg:col-span-9 md:col-span-12"
         >
           <div class="about-content">
             <h2 class="pb-2 text-2xl font-semibold border-b border-gray-100">
@@ -39,14 +30,10 @@
             <p>
               我于2017年毕业于<a href="http://www.hubu.edu.cn/" target="_blank"
                 >湖北大学</a
-              >，软件工程专业，曾在<a
-                href="https://www.hand-china.com/"
-                target="_blank"
+              >，软件工程专业，曾在<a href="https://www.hand-china.com/" target="_blank"
                 >上海汉得</a
-              >、<a href="https://www.jinrirencai.com/" target="_blank"
-                >深圳今日人才</a
-              >和<a href="https://www.casstime.com/" target="_blank"
-                >深圳开思时代</a
+              >、<a href="https://www.jinrirencai.com/" target="_blank">深圳今日人才</a
+              >和<a href="https://www.casstime.com/" target="_blank">深圳开思时代</a
               >工作过。
             </p>
 
@@ -62,16 +49,17 @@
             </p>
 
             <p>
-              我的<router-link to="/resume">简历</router-link
-              >是可用的，如果你有任何想法。
+              我的<router-link to="/resume">简历</router-link>是可用的，如果你有任何想法。
             </p>
 
             <p>
               给我发邮件<a href="mailto:1126765590hui@gmail.com"
                 >1126765590hui@gmail.com</a
-              >。
+              >，或者在下方留下评论。
             </p>
           </div>
+
+          <Comment type="about" :id="0" />
 
           <div class="mt-8">
             <div class="pb-1 text-2xl font-semibold border-b border-gray-100">
@@ -110,11 +98,9 @@ import { apis } from "@/api";
 import { http } from "@/common/js/http";
 import Author from "../home/components/author/index.vue";
 import Footer from "../home/components/footer/index.vue";
-import {
-  ILatestArticleListResponse,
-  ILatestArticleListState,
-} from "./interface";
+import { ILatestArticleListResponse, ILatestArticleListState } from "./interface";
 import { formatTime } from "@/common/js/util";
+import Comment from "@/components/comment/index.vue";
 
 const state = reactive<ILatestArticleListState>({
   limit: 3,

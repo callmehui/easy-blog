@@ -3,7 +3,7 @@ import upperFirst from "lodash/upperFirst";
 import camelCase from "lodash/camelCase";
 import App from "./App.vue";
 import router from "./router";
-import store from "./store";
+import store, { key } from "./store";
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 import "highlight.js/styles/monokai-sublime.css";
@@ -31,4 +31,4 @@ Object.keys(modules).forEach((fileName: string) => {
   );
 });
 
-app.use(store).use(router).use(ElementPlus).mount("#app");
+app.use(store, key).use(router).use(ElementPlus).mount("#app");

@@ -1,9 +1,11 @@
-import { useQuery } from "vue-query";
+import { useMutation, useQuery, useQueryClient } from "vue-query";
 import { apis } from "@/api";
 import { http } from "@/common/js/http";
 import { CommentType } from "../interface";
 import {
   CommentTypeName,
+  IAddCommentParams,
+  IAddCommentResponse,
   ICommentItem,
   IFetchCommentItem,
   IFetchCommentsProps,
@@ -13,11 +15,11 @@ import { reactive, Ref } from "vue";
 /** 获取评论列表 */
 export const fetchComments = (
   id: number,
-  type: CommentType = "talk",
+  type: CommentType = "article",
   page = 1,
   limit = 100
 ) => {
-  let typeName: CommentTypeName = "talkId";
+  let typeName: CommentTypeName = "articleId";
   switch (type) {
     case "talk":
       typeName = "talkId";
@@ -32,7 +34,7 @@ export const fetchComments = (
       typeName = "aboutId";
       break;
     default:
-      typeName = "talkId";
+      typeName = "articleId";
       break;
   }
   const dataProps: IFetchCommentsProps = {
@@ -74,14 +76,121 @@ export const useComments = (
         });
         comments.forEach((item) => {
           item.children = [];
-          secondComment.forEach((subItem) => {
-            if (item.id === Number(subItem.beCommentId)) {
-              item.children.push(subItem);
-            }
-          });
+          item.children = secondComment;
         });
         return comments;
       },
     }
+  );
+};
+
+/**
+ *
+ * @param commentId 评论id
+ * @param visitorId 访客id
+ * @param isAdd true: 点赞评论， false: 取消点赞评论
+ */
+export const toogleCommentLike = (
+  commentId: number,
+  visitorId: number,
+  isAdd: boolean
+) => {
+  return http(
+    {
+      method: "post",
+      url: apis.addCommentsLikeNum,
+      data: {
+        commentId,
+        visitorId,
+        isAdd,
+      },
+    },
+    "success"
+  );
+};
+
+/**
+ * 点赞或者取消点赞
+ * @param commentId 评论id
+ * @param visitorId 访客id
+ * @param isAdd trrue: 点赞评论， false: 取消点赞评论
+ * @returns
+ */
+// export const useAddCommentLike = (
+//   commentId: ComputedRef<number>,
+//   visitorId: ComputedRef<number | undefined>,
+//   isAdd: boolean,
+//   parentComentId: number,
+//   type: CommentType
+// ) => {
+//   if (visitorId.value) {
+//     const queryClient = useQueryClient();
+//     return useMutation(
+//       () =>
+//         toogleCommentLike(commentId.value, visitorId.value as number, isAdd),
+//       {
+//         onSuccess: (data) => {
+//           /** 使缓存数据失效，并重新请求缓存数据 */
+//           const oldFetchCommentData: ICommentItem[] | undefined =
+//             queryClient.getQueryData(
+//               reactive(["fetchComment", { id: parentComentId, type }])
+//             );
+//           if (oldFetchCommentData) {
+//             const newFetchCommentData = oldFetchCommentData.map((item) => {
+//               if (item.id === commentId.value) {
+//                 if (isAdd) {
+//                   item.likeList = [
+//                     ...item.likeList,
+//                     { visitorId: Number(visitorId.value) },
+//                   ];
+//                 } else {
+//                   item.likeList = item.likeList.filter(
+//                     (item) => item.visitorId !== visitorId.value
+//                   );
+//                 }
+//               }
+//               return item;
+//             });
+//             queryClient.setQueryData(
+//               reactive(["fetchComment", { id: parentComentId, type }]),
+//               newFetchCommentData
+//             );
+//           }
+//         },
+//       }
+//     );
+//   }
+// };
+
+/**
+ * 更新访客头像
+ * @param id 访客id
+ * @param portrait 访客头像url
+ * @returns
+ */
+export const updatePortrait = (id: number, portrait: string) => {
+  return http({
+    method: "post",
+    url: apis.updatePortrait,
+    data: {
+      id,
+      portrait,
+    },
+  });
+};
+
+/**
+ * 发表评论参数
+ * @param params 评论参数
+ * @returns
+ */
+export const addComment = (params: IAddCommentParams) => {
+  return http<IAddCommentResponse>(
+    {
+      method: "post",
+      url: apis.addComment,
+      data: params,
+    },
+    "data"
   );
 };

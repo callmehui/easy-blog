@@ -1,14 +1,16 @@
 <template>
-  <div id="comment-input">
+  <div ref="commentInputRef" @click="handleClick">
     <el-input
-      v-model="modelValue"
+      :modelValue="modelValue"
       type="textarea"
       :autosize="{ minRows: 2, maxRows: 6 }"
       :input-style="{ padding: '8px 12px 8px 12px', height: '64px' }"
-      :placeholder="`输入评论（Enter换行，${keyboardDesc}发送）`"
+      :placeholder="placeholderText"
+      :autofocus="focus"
       @focus="handleFocus"
       @keydown.ctrl.enter.native="handleSubmit"
       @keydown.meta.enter.native="handleSubmit"
+      @input="handleInput"
     />
     <div v-show="displayOperate" class="flex mt-2">
       <!-- 表情和图片 -->
@@ -32,18 +34,33 @@
 
 <script lang="ts" setup>
 import { getCurrentOS } from "@/common/js/util";
-import { computed, ref, onMounted, onBeforeUnmount } from "vue";
+import { computed, ref, onMounted, onBeforeUnmount, toRefs, watch } from "vue";
 
-const props = defineProps<{
-  modelValue: string;
-}>();
+const props = withDefaults(
+  defineProps<{
+    modelValue: string;
+    placeholder?: string;
+    focus?: boolean;
+  }>(),
+  {
+    modelValue: "",
+    placeholder: "",
+    focus: false,
+  }
+);
 
 const emits = defineEmits<{
+  (e: "update:modelValue", value: string): void;
   (e: "submit"): void;
+  (e: "click"): void;
+  (e: "focus"): void;
 }>();
 
+const { modelValue, placeholder, focus } = toRefs(props);
+
+const commentInputRef = ref<HTMLDivElement>();
 /** 输入框是否聚焦 */
-const isFocus = ref(false);
+const isFocus = ref(focus.value);
 const isMacOS = ref(false);
 
 const keyboardDesc = computed(() => {
@@ -53,25 +70,41 @@ const keyboardDesc = computed(() => {
   return "Ctrl + Enter";
 });
 
+const placeholderText = computed(() => {
+  if (placeholder.value) {
+    return placeholder.value;
+  }
+  return `输入评论（Enter换行，${keyboardDesc.value}发送）`;
+});
+
 /** 是否展示操作按钮 */
 const displayOperate = computed(() => {
-  return props.modelValue.length > 0 || isFocus.value;
+  return modelValue.value.length > 0 || isFocus.value;
 });
 
 const handleFocus = () => {
   isFocus.value = true;
+  emits("focus");
 };
 
 const handleInputClick = (e: Event) => {
-  const commentInputEle = document.querySelector("#comment-input");
-  /** 被点击的元素不是commentInputEle，就隐藏commentInputEle */
-  if (!commentInputEle?.contains(e.target as Node | null)) {
+  /** 被点击的元素不是inputRef，就隐藏inputRef */
+  if (!focus.value && !commentInputRef.value?.contains(e.target as Node | null)) {
     isFocus.value = false;
   }
 };
 
+const handleInput = (value: string) => {
+  emits("update:modelValue", value);
+};
+
+const handleClick = (e: Event) => {
+  e.preventDefault();
+  e.stopPropagation();
+  emits("click");
+};
+
 const handleSubmit = () => {
-  console.log("submit");
   emits("submit");
 };
 

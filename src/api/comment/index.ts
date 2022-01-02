@@ -6,7 +6,9 @@ export default {
   /** 获取评论列表 */
   fetchComments: baseUrl + "/blog/comment/getComments",
   /** 发表评论 */
-  addComments: baseUrl + "/blog/comment/addComment",
+  addComment: baseUrl + "/blog/comment/addComment",
   /** 评论点赞 */
   addCommentsLikeNum: baseUrl + "/blog/comment/addLikeCount",
+  /** 更新用户头像 */
+  updatePortrait: baseUrl + "/blog/comment/updatePortrait",
 };
