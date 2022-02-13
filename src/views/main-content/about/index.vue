@@ -21,7 +21,7 @@
                 target="_blank"
                 >仿网易云音乐web版本</a
               >，你可以在<a
-                href="https://github.com/callmehui/web-music-player"
+                href="https://github.com/programmerMark/web-music-player"
                 target="_blank"
                 >github</a
               >上访问和获取它。

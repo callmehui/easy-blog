@@ -110,59 +110,6 @@ export const toogleCommentLike = (
 };
 
 /**
- * 点赞或者取消点赞
- * @param commentId 评论id
- * @param visitorId 访客id
- * @param isAdd trrue: 点赞评论， false: 取消点赞评论
- * @returns
- */
-// export const useAddCommentLike = (
-//   commentId: ComputedRef<number>,
-//   visitorId: ComputedRef<number | undefined>,
-//   isAdd: boolean,
-//   parentComentId: number,
-//   type: CommentType
-// ) => {
-//   if (visitorId.value) {
-//     const queryClient = useQueryClient();
-//     return useMutation(
-//       () =>
-//         toogleCommentLike(commentId.value, visitorId.value as number, isAdd),
-//       {
-//         onSuccess: (data) => {
-//           /** 使缓存数据失效，并重新请求缓存数据 */
-//           const oldFetchCommentData: ICommentItem[] | undefined =
-//             queryClient.getQueryData(
-//               reactive(["fetchComment", { id: parentComentId, type }])
-//             );
-//           if (oldFetchCommentData) {
-//             const newFetchCommentData = oldFetchCommentData.map((item) => {
-//               if (item.id === commentId.value) {
-//                 if (isAdd) {
-//                   item.likeList = [
-//                     ...item.likeList,
-//                     { visitorId: Number(visitorId.value) },
-//                   ];
-//                 } else {
-//                   item.likeList = item.likeList.filter(
-//                     (item) => item.visitorId !== visitorId.value
-//                   );
-//                 }
-//               }
-//               return item;
-//             });
-//             queryClient.setQueryData(
-//               reactive(["fetchComment", { id: parentComentId, type }]),
-//               newFetchCommentData
-//             );
-//           }
-//         },
-//       }
-//     );
-//   }
-// };
-
-/**
  * 更新访客头像
  * @param id 访客id
  * @param portrait 访客头像url

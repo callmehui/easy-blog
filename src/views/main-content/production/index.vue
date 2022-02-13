@@ -88,7 +88,7 @@ const products = [
       "基于Vue3、Typescript和vite开发的仿网易云音乐客户端web版本。UI参照了网易云音乐mac客户端，后端接口由开源项目提供，高度还原了网易云音乐。项目仍在持续维护中...",
     coverUrl:
       "https://image.immortalboy.cn/public/uploads/2021/12/24/1640340786327969.jpg",
-    githubUrl: "https://github.com/callmehui/web-music-player",
+    githubUrl: "https://github.com/programmerMark/web-music-player",
     previewUrl: "https://music-player.immortalboy.cn",
     remark: "项目前端通过netlify自动部署，国内访问相对慢。",
   },

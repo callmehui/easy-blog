@@ -36,7 +36,7 @@ import Footer from "./components/footer/index.vue";
 
 const articleState = reactive<IArticleState>({
   type: "全部",
-  limit: 10,
+  limit: 20,
   offset: 0,
   total: 0,
   list: [],
@@ -44,11 +44,7 @@ const articleState = reactive<IArticleState>({
 });
 
 /** 获取文章列表 */
-const fetchArticleList = async (
-  limit: number,
-  offset: number,
-  type: string
-) => {
+const fetchArticleList = async (limit: number, offset: number, type: string) => {
   const { total, list } = await http<IFetchArticleListResponse>(
     {
       method: "post",
@@ -66,11 +62,7 @@ const fetchArticleList = async (
 const onPageChange = () => {
   if (articleState.hasMore) {
     articleState.offset += articleState.limit;
-    fetchArticleList(
-      articleState.limit,
-      articleState.offset,
-      articleState.type
-    );
+    fetchArticleList(articleState.limit, articleState.offset, articleState.type);
   }
 };
 
