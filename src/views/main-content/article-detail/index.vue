@@ -1,14 +1,11 @@
 <template>
-  <div class="w-full bg-gray-100">
+  <div class="w-full">
     <div class="max-w-5xl m-auto">
       <div class="grid grid-cols-12 mt-4 mb-8">
         <!-- 文章内容 -->
         <div class="pb-4 rounded shadow-sm lg:col-span-9 md:col-span-12">
           <div class="bg-white">
-            <ArticleContent
-              v-if="articleState.content"
-              :content="articleState.content"
-            />
+            <ArticleContent v-if="articleState.content" :content="articleState.content" />
           </div>
           <!-- 文章评论 -->
           <Comment :id="24" />

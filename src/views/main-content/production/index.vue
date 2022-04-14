@@ -1,28 +1,23 @@
 <template>
-  <div class="w-full bg-gray-100">
+  <div class="w-full">
     <div class="max-w-5xl m-auto">
       <div class="grid grid-cols-12 mt-4 mb-8">
         <div class="lg:col-span-9 md:col-span-12">
           <div
-            class="
-              flex
-              px-4
-              py-3
-              mb-5
-              bg-white
-              border border-gray-200
-              rounded
-              shadow
-            "
+            class="flex px-4 py-3 mb-5 bg-white border border-gray-200 rounded shadow"
             v-for="product in products"
             :key="product.name"
           >
             <div class="mr-4 bg-gray-900 border border-gray-100 rounded-lg">
-              <img
+              <div
+                class="h-full mx-2 pt-4 pb-2 w-80 bg-contain bg-no-repeat bg-center"
+                :style="{ 'background-image': `url(${product.coverUrl})` }"
+              ></div>
+              <!-- <img
                 class="h-full px-2 pt-4 pb-2 w-80"
                 :src="product.coverUrl"
                 alt="项目预览图片"
-              />
+              /> -->
             </div>
             <div class="flex-1">
               <a
@@ -44,10 +39,7 @@
                 <span class="text-sm text-blue-600">{{ product.type }}</span>
               </div>
               <div class="pb-2">
-                <a
-                  class="mr-4 btn btn-primary"
-                  :href="product.previewUrl"
-                  target="_blank"
+                <a class="mr-4 btn btn-primary" :href="product.previewUrl" target="_blank"
                   >在线预览</a
                 >
                 <a
@@ -102,6 +94,18 @@ const products = [
     githubUrl: "",
     previewUrl: "https://immortalboy.cn/",
     remark: "项目持续迭代中，同时个人博客积极更新中。",
+  },
+  {
+    name: "Mark天气",
+    type: "开源项目",
+    summary:
+      "使用Taro3 + Vue3 + ts开发的天气小程序。项目提供了实时天气、城市天气搜索等功能。",
+    coverUrl:
+      "https://image.immortalboy.cn/public/uploads/2022/04/14/1649943754556143.jpg",
+    githubUrl: "https://github.com/programmermark/markweather",
+    previewUrl:
+      "https://image.immortalboy.cn/public/uploads/2022/04/14/1649943640695640.jpg",
+    remark: "项目持续迭代中。",
   },
 ];
 </script>

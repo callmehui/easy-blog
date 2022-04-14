@@ -1,7 +1,7 @@
 <template>
   <div id="app-content" class="flex flex-col">
     <Header />
-    <el-scrollbar class="h-[calc(100vh-60px)] flex-1 mt-[60px]">
+    <el-scrollbar class="h-[calc(100vh-60px)] flex-1 mt-[60px] bg-gray-100">
       <router-view />
     </el-scrollbar>
     <!--  vue-query 开发者工具 -->

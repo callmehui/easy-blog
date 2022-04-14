@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full bg-gray-100">
+  <div class="w-full">
     <div class="max-w-5xl m-auto">
       <div class="grid grid-cols-12 mt-4 mb-8">
         <!-- 文章列表 -->

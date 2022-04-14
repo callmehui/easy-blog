@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full bg-gray-100">
+  <div class="w-full">
     <div class="relative max-w-5xl m-auto mt-8 mb-10 border rounded shadow-sm">
       <!-- 下载简历 -->
       <div class="absolute top-4 right-8 btn btn-danger" @click="downResume">
@@ -10,15 +10,7 @@
         <!-- 简历左侧 -->
         <div class="px-8 py-6 pb-4 lg:col-span-7 md:col-span-12">
           <!-- 个人信息 -->
-          <h2
-            class="
-              pb-1
-              text-2xl
-              font-bold
-              text-gray-700
-              border-b border-gray-200
-            "
-          >
+          <h2 class="pb-1 text-2xl font-bold text-gray-700 border-b border-gray-200">
             个人信息
           </h2>
           <ul>
@@ -36,16 +28,7 @@
             </li>
           </ul>
           <!-- 教育经历 -->
-          <h2
-            class="
-              pb-1
-              mb-4
-              text-2xl
-              font-bold
-              text-gray-700
-              border-b border-gray-200
-            "
-          >
+          <h2 class="pb-1 mb-4 text-2xl font-bold text-gray-700 border-b border-gray-200">
             教育
           </h2>
           <h3 class="mt-5 mb-2 text-lg font-medium text-red-500">
@@ -58,16 +41,7 @@
             </li>
           </ul>
           <!-- 专业技能 -->
-          <h2
-            class="
-              pb-1
-              mb-4
-              text-2xl
-              font-bold
-              text-gray-700
-              border-b border-gray-200
-            "
-          >
+          <h2 class="pb-1 mb-4 text-2xl font-bold text-gray-700 border-b border-gray-200">
             专业技能
           </h2>
           <ol>
@@ -77,9 +51,7 @@
             </li>
             <li class="my-1 text-base text-gray-600">
               <b>Vue3全家桶：</b>：
-              <span class="text-gray-500 text"
-                >熟练掌握，个人开源项目中多次使用；</span
-              >
+              <span class="text-gray-500 text">熟练掌握，个人开源项目中多次使用；</span>
             </li>
             <li class="my-1 text-base text-gray-600">
               <b>React</b>和<b>React Hooks</b>：
@@ -107,24 +79,13 @@
             </li>
           </ol>
           <!-- 项目（工作） -->
-          <h2
-            class="
-              pb-1
-              mb-4
-              text-2xl
-              font-bold
-              text-gray-700
-              border-b border-gray-200
-            "
-          >
+          <h2 class="pb-1 mb-4 text-2xl font-bold text-gray-700 border-b border-gray-200">
             项目（工作）
           </h2>
           <h3>
             <span class="text-[17px] text-red-500 font-semibold">狮令部</span>
             <span class="px-1 font-semibold text-gray-700">—</span>
-            <span class="text-[17px] text-gray-700 font-semibold"
-              >研发与维护</span
-            >
+            <span class="text-[17px] text-gray-700 font-semibold">研发与维护</span>
             <span class="ml-2 text-sm text-gray-400">[2020.07 - 2021-09]</span>
           </h3>
           <ul>
@@ -140,15 +101,12 @@
               我主要负责项目的调度相关模块的功能开发与维护、与地图相关的各种功能的开发与维护;
             </li>
             <li class="my-1 text-[15px] text-gray-600">
-              项目初期为项目添加了 <b>Eslint</b>+<b>Prettier</b>+<b
-                >StyleLint</b
-              >
+              项目初期为项目添加了 <b>Eslint</b>+<b>Prettier</b>+<b>StyleLint</b>
               相关配置，格式化了旧代码，提升了新功能开发效率与并减少了代码维护的成本；
             </li>
             <li class="my-1 text-[15px] text-gray-600">
-              整合 2 个系统的地图相关的功能中，使用 iframe 实现了 2
-              个版本高德地图 api 共存，并使用 TypeScript
-              重构和新开发了原本不兼容的地图相关功能；
+              整合 2 个系统的地图相关的功能中，使用 iframe 实现了 2 个版本高德地图 api
+              共存，并使用 TypeScript 重构和新开发了原本不兼容的地图相关功能；
             </li>
             <li class="my-1 text-[15px] text-gray-600">
               牵头重构了系统中用户使用占比<b>30% - 40%</b
@@ -158,13 +116,9 @@
             </li>
           </ul>
           <h3>
-            <span class="text-[17px] text-red-500 font-semibold"
-              >今日人才OA系统</span
-            >
+            <span class="text-[17px] text-red-500 font-semibold">今日人才OA系统</span>
             <span class="px-1 font-semibold text-gray-700">—</span>
-            <span class="text-[17px] text-gray-700 font-semibold"
-              >创建、研发与维护</span
-            >
+            <span class="text-[17px] text-gray-700 font-semibold">创建、研发与维护</span>
             <span class="ml-2 text-sm text-gray-400">[2018.08 - 2020-01]</span>
           </h3>
           <ul>
@@ -182,9 +136,7 @@
               >深圳市残联信息化平台一期项目</span
             >
             <span class="px-1 font-semibold text-gray-700">—</span>
-            <span class="text-[17px] text-gray-700 font-semibold"
-              >创建与研发</span
-            >
+            <span class="text-[17px] text-gray-700 font-semibold">创建与研发</span>
             <span class="ml-2 text-sm text-gray-400">[2019.10 - 2019-12]</span>
           </h3>
           <ul>
@@ -195,8 +147,9 @@
               我独立完成了项目前端部分的搭建与开发，主要是做数据的可视化呈现；具体内容包括桌面端的后台系统和微信小程序的开发。
             </li>
             <li class="my-1 text-[15px] text-gray-600">
-              桌面端的后台网站是基于<b>Vue</b>+<b>Element UI</b
-              >开发，小程序则使用<b>Uniapp</b>
+              桌面端的后台网站是基于<b>Vue</b>+<b>Element UI</b>开发，小程序则使用<b
+                >Uniapp</b
+              >
               进行开发；两者都需要对数据进行可视化呈现，都使用了<b>Echarts</b>
               作为数据可视化的开发框架。在项目中，我根据后端的数据格式，对各类图表进行了二次组件化封装，根据
               <b>Element UI</b>
@@ -204,16 +157,7 @@
             </li>
           </ul>
           <!-- 项目（开源） -->
-          <h2
-            class="
-              pb-1
-              mb-4
-              text-2xl
-              font-bold
-              text-gray-700
-              border-b border-gray-200
-            "
-          >
+          <h2 class="pb-1 mb-4 text-2xl font-bold text-gray-700 border-b border-gray-200">
             项目（开源）
           </h2>
           <h3 class="mt-5 mb-2 text-lg font-medium text-red-500">
@@ -233,26 +177,13 @@
             </li>
           </ul>
           <!-- 工作 -->
-          <h2
-            class="
-              pb-1
-              mb-4
-              text-2xl
-              font-bold
-              text-gray-700
-              border-b border-gray-200
-            "
-          >
+          <h2 class="pb-1 mb-4 text-2xl font-bold text-gray-700 border-b border-gray-200">
             工作
           </h2>
           <h3>
-            <span class="text-[17px] text-red-500 font-semibold">
-              上海汉得</span
-            >
+            <span class="text-[17px] text-red-500 font-semibold"> 上海汉得</span>
             <span class="px-1 font-semibold text-gray-700">—</span>
-            <span class="text-[17px] text-gray-700 font-semibold"
-              >技术顾问</span
-            >
+            <span class="text-[17px] text-gray-700 font-semibold">技术顾问</span>
             <span class="ml-2 text-sm text-gray-400">[2017.07 - 2018-07]</span>
           </h3>
           <ul>
@@ -262,13 +193,9 @@
             </li>
           </ul>
           <h3>
-            <span class="text-[17px] text-red-500 font-semibold">
-              深圳今日人才</span
-            >
+            <span class="text-[17px] text-red-500 font-semibold"> 深圳今日人才</span>
             <span class="px-1 font-semibold text-gray-700">—</span>
-            <span class="text-[17px] text-gray-700 font-semibold"
-              >前端工程师</span
-            >
+            <span class="text-[17px] text-gray-700 font-semibold">前端工程师</span>
             <span class="ml-2 text-sm text-gray-400">[2018.08 - 2020-05]</span>
           </h3>
           <ul>
@@ -278,13 +205,9 @@
             </li>
           </ul>
           <h3>
-            <span class="text-[17px] text-red-500 font-semibold">
-              深圳开思时代</span
-            >
+            <span class="text-[17px] text-red-500 font-semibold"> 深圳开思时代</span>
             <span class="px-1 font-semibold text-gray-700">—</span>
-            <span class="text-[17px] text-gray-700 font-semibold"
-              >前端工程师</span
-            >
+            <span class="text-[17px] text-gray-700 font-semibold">前端工程师</span>
             <span class="ml-2 text-sm text-gray-400">[2020.07 - 至今]</span>
           </h3>
           <ul>
@@ -293,16 +216,7 @@
             </li>
           </ul>
           <!-- 我建的网站 -->
-          <h2
-            class="
-              pb-1
-              mb-4
-              text-2xl
-              font-bold
-              text-gray-700
-              border-b border-gray-200
-            "
-          >
+          <h2 class="pb-1 mb-4 text-2xl font-bold text-gray-700 border-b border-gray-200">
             我建的网站
           </h2>
           <h3 class="mt-5 mb-2 text-lg font-medium text-red-500">
@@ -322,9 +236,7 @@
           <h3 class="mt-5 mb-2 text-lg font-medium text-red-500">
             <a href="https://immortalboy.cn/" target="_blank">个人博客</a>
             <span class="ml-2 text-sm font-normal text-gray-400">-</span>
-            <span class="ml-2 text-sm font-normal text-gray-400"
-              >[2021-10 - 至今]</span
-            >
+            <span class="ml-2 text-sm font-normal text-gray-400">[2021-10 - 至今]</span>
           </h3>
           <ul>
             <li class="text-base text-gray-600">
@@ -335,16 +247,7 @@
         <!-- 简历右侧 -->
         <div class="col-span-5 py-6 ml-5 mr-8">
           <!-- 联系方式 -->
-          <h2
-            class="
-              pb-1
-              mb-4
-              text-2xl
-              font-bold
-              text-gray-700
-              border-b border-gray-200
-            "
-          >
+          <h2 class="pb-1 mb-4 text-2xl font-bold text-gray-700 border-b border-gray-200">
             联系方式
           </h2>
           <ul>
@@ -358,16 +261,11 @@
             </li>
             <li class="my-1 text-base text-gray-600">
               邮箱：
-              <a href="mailto:1126765590hui@gmail.com"
-                >1126765590hui@gmail.com</a
-              >
+              <a href="mailto:1126765590hui@gmail.com">1126765590hui@gmail.com</a>
             </li>
             <li class="my-1 text-base text-gray-600">
               网站：
-              <a
-                class="text-ellipsis"
-                href="https://immortalboy.cn"
-                target="_blank"
+              <a class="text-ellipsis" href="https://immortalboy.cn" target="_blank"
                 >https://immortalboy.cn</a
               >
             </li>
